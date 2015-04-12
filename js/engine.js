@@ -139,7 +139,7 @@ var Engine = (function(global) {
             }
         }
 
-        ctx.font = '36px Roboto';
+        ctx.font = '36px Sans Serif';
         renderEntities();
     }
 
