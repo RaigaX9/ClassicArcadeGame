@@ -1,6 +1,5 @@
 /* Variables and Objects*/
 var screenwidth = 500;
-var screenheight = 500;
 var gamestate = true;
 var highscore = 0;
 
