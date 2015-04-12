@@ -9,7 +9,7 @@ resource, and images.
  - Press 'P' to pause
  - Press 'R' to reset
  - You have three lives and once you've ran out, you'll get a 'Game Over' text. To play again, press 'R'.
- - Note: High score will always stay the same or increase if the score is greater than before on the same page.
+ - __Note__: High score will always stay the same or increase if the score is greater than before on the same page.
   If you refresh the page, the high score will go back to 0.
 
 
