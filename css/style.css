@@ -1,0 +1,17 @@
+body {
+    font-size: 24px;
+    font-family: Roboto;
+    text-align: center;
+ }
+
+.instructions {
+    margin: -5px;
+}
+
+ .title {
+    font-size: 30px;
+ 	margin-bottom: -25px;
+    font-weight: bold;
+ }
+
+
