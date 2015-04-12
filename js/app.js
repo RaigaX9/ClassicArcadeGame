@@ -19,7 +19,7 @@ var Enemy = function() {
     this.x = randomEnemies(-50, -500);
     this.y = rowsenemies[randomrow];
     this.speed = randomEnemies(100, 300);
-}
+};
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -35,6 +35,7 @@ Enemy.prototype.update = function(dt) {
         this.row = randomrow + 1;
         this.y = rowsenemies[randomrow];
     }
+
     /*This will determine when the player gets hit and it will reset once you ran out of all lives*/
     if (this.row == player.row) {
         if (this.x + 70 >= player.x && this.x <= player.x + 70) {
@@ -42,12 +43,12 @@ Enemy.prototype.update = function(dt) {
             player.reset();
         }
     }
-}
+};
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 //Generates random enemies by finding the random number between both the minimum and maximum number of enemy rows.
 function randomEnemies(min, max)
@@ -62,13 +63,12 @@ var Player = function() {
     this.sprite = 'images/char-boy.png';
     this.row = 5;
     this.score = 0;
-    //this.highscore = 0;
     gamestate = true;
     this.x = 202;
     this.y = 405;
     this.life = 3;
 
-}
+};
 
 // This will update the player's position
 // Note: Also uses 'dt' from Enemy.prototype.update for the time delta between ticks
@@ -87,7 +87,7 @@ Player.prototype.update = function(dt) {
     }
 
 
-}
+};
 
 //This will give key inputs of moving your player, pause, and reset buttons.
 Player.prototype.handleInput = function(key) {
@@ -128,12 +128,11 @@ Player.prototype.handleInput = function(key) {
         this.newGame();
     }
 
-}
+};
 
 //Draws the player and other features on the game screen.
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    ctx.font = '36px Roboto';
     ctx.fillText('Score: ' + this.score, 355, 550);
 
     //The high score will remain the highest until you refresh the game so that it will go back to 0.
@@ -142,27 +141,26 @@ Player.prototype.render = function() {
         highscore += 1;
     }
     if (this.life === 0) {
-        ctx.font = '50px Roboto';
         ctx.fillText('Game Over', 150, 345);
     }
-}
+};
 
 //Creates a new game in which the player goes back to its original properties.
 Player.prototype.newGame = function() {
     player = new Player();
-}
+};
 
 //Resets the player back to its original position.
 Player.prototype.reset = function() {
     this.x = 202;
     this.y = 405;
     this.row = 5;
-}
+};
 
 //This will show the player's lives
 var lifehearts = function() {
     this.sprite = 'images/SmallHeart.png';
-}
+};
 
 //This will draw the player on the screen.
 lifehearts.prototype.render = function() {
@@ -171,7 +169,7 @@ lifehearts.prototype.render = function() {
         ctx.drawImage(Resources.get(this.sprite), x, 60);
         x += 35;   
     }
-}
+};
 
 //Objects added after the additions for players, life, and enemies.
 var player = new Player();
